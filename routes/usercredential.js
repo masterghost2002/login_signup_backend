@@ -9,8 +9,8 @@ let nodemailer = require('nodemailer');
 let transporter = nodemailer.createTransport({
     service: "gmail",
     auth:{
-        user: "rakeshdhariwal61@gmail.com",
-        pass: "mqxiorsgcnepyrvh"
+        user: "<Email>",
+        pass: "<Token>"
     }
 });
 
@@ -51,8 +51,8 @@ router.post('/signup', async (req, res)=>{
         req.session.email = req.body.email;
         req.session.password = req.body.password;
         let mailOptions = {
-            from: "monkeyapp@help.com",
-            to: "rakeshdhariwal61@gmail.com",
+            from: "",
+            to: "",
             subject: "Verify Email Password",
             text: `Please update your password. [POST] http://localhost:3000/verify/${req.session.id}`
         }
